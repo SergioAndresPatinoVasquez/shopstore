@@ -84,6 +84,10 @@ body {
   margin-top: 1.2rem;
 }
 
+.inactive {
+  display: none;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -134,6 +138,7 @@ nav .nav-derecha ul .nav-usuario {
   color: var(--light);
   font-size: var(--sm);
   margin-right: 1.2rem;
+  cursor: pointer;
 }
 nav .nav-derecha ul .nav-carrito {
   position: relative;
@@ -152,6 +157,42 @@ nav .nav-derecha ul .nav-carrito div {
   border-radius: 50%;
   font-size: var(--sm);
   font-weight: bold;
+}
+nav .desktop-menu {
+  position: absolute;
+  top: 6rem;
+  right: 7rem;
+  background-color: var(--white);
+  width: 10rem;
+  height: auto;
+  border: 0.1rem solid var(--light);
+  border-radius: 0.6rem;
+  padding: 2rem 2rem 0rem 2rem;
+}
+nav .desktop-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav .desktop-menu ul li {
+  text-align: end;
+  font-weight: bold;
+}
+nav .desktop-menu ul li a {
+  display: inline-block;
+  color: var(--black);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: var(--sm);
+}
+nav .desktop-menu ul li:last-child {
+  padding-top: 2rem;
+  border-top: 0.1rem solid var(--light);
+}
+nav .desktop-menu ul li:last-child a {
+  color: var(--green);
+  font-size: var(--sm);
+  font-weight: 500;
 }
 
 .contenedor-carts {
