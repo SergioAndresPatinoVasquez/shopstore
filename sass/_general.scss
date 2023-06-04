@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light: #C7C7C7;
+    --text-input: #F7F7F7;
+    --green: #ACD9B2;
+    --sm: 1.4rem;
+    --md: 1.6rem;
+    --lg: 1.8rem;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+  }
