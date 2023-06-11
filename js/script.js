@@ -50,67 +50,67 @@ const productList = [];
 productList.push({
     name: 'Taylor Eléctrica',
     price: 120,
-    image: '../imagenes/Taylor Electrica.jpg',
+    image: './imagenes/Taylor Electrica.jpg',
 });
 productList.push({
     name: 'Epiphone',
     price: 140,
-    image: '../imagenes/Guitarra Epiphone.jpg',
+    image: './imagenes/Guitarra Epiphone.jpg',
 });
 productList.push({
     name: 'Piano',
     price: 560,
-    image: '../imagenes/Piano.jpg'
+    image: './imagenes/Piano.jpg'
 });
 productList.push({
     name: 'Ukulele',
     price: 70,
-    image: '../imagenes/Ukulele.jpg'
+    image: './imagenes/Ukulele.jpg'
 });
 productList.push({
     name: 'Microfono',
     price: 200,
-    image: '../imagenes/Micrófono.jpg'
+    image: './imagenes/Micrófono.jpg'
 });
 productList.push({
     name: 'Telecaster',
     price: 120,
-    image: '../imagenes/Telecaster.jpg'
+    image: './imagenes/Telecaster.jpg'
 });
 productList.push({
     name: 'Saxofon',
     price: 350,
-    image: '../imagenes/Saxofon.jpg'
+    image: './imagenes/Saxofon.jpg'
 });
 productList.push({
     name: 'Gybson',
     price: 200,
-    image: '../imagenes/Gybson Acustica.jpg'
+    image: './imagenes/Gybson Acustica.jpg'
 });
 productList.push({
     name: 'Bateria',
     price: 720,
-    image: '../imagenes/Bateria.jpg'
+    image: './imagenes/Bateria.jpg'
 });
 productList.push({
     name: 'Pua',
     price: 10,
-    image: '../imagenes/Pua.jpg'
+    image: './imagenes/Pua.jpg'
 });
 productList.push({
     name: 'Gybson Eléctrica',
     price: 250,
-    image: '../imagenes/Gybson Eléctrica.jpg'
+    image: './imagenes/Gybson Eléctrica.jpg'
 });
 productList.push({
     name: 'Guitarra Acústica',
     price: 90,
-    image: '../imagenes/Guitarra acustica.jpg'
+    image: './imagenes/Guitarra acustica.jpg'
 });
 productList.push({
     name: 'Yamaha Cx4',
     price: 170,
-    image: '../imagenes/Yamaha.jpg'
+    image: './imagenes/Yamaha.jpg'
 });
 
 // <!-- <div class="items-carts">
@@ -158,7 +158,7 @@ productList.push({
         const productImgCart = document.createElement('img');
         productImgCart.classList.add("addCarrito");
         
-        productImgCart.setAttribute('src', '../iconos/agregarcarrito.svg');
+        productImgCart.setAttribute('src', './iconos/agregarcarrito.svg');
         //console.log(productImgCart);
 
         productInfoFigure.appendChild(productImgCart);
@@ -265,7 +265,7 @@ for(let producto of carritoDeCompra){ //of carritoDeCompra
     let eliminar_producto = document.createElement("img");
     eliminar_producto.classList.add("eliminarProducto");
     //eliminar_producto.classList.add("borrarProducto");
-    eliminar_producto.setAttribute('src', '../iconos/icon_close.png');
+    eliminar_producto.setAttribute('src', './iconos/icon_close.png');
 
     div_carrito.appendChild(img_figure);
     div_carrito.appendChild(product_Name);
