@@ -4,13 +4,15 @@ let menuHamIcon = document.querySelector(".menu");
 let menuCarritoIcon = document.querySelector(".nav-carrito");
 let mobilemenu = document.querySelector(".mobile-menu");
 let aside = document.querySelector('.product-detail');
-let contador_carrito = document.querySelector('.contadorCarrito').innerText;
+
 const cardsContainer = document.querySelector('.contenedor-carts');
 
+console.log(desktopMenu);
 
-menuUsuario.addEventListener('click', intercambiarDesktopMenu);
+menuUsuario.addEventListener("click", intercambiarDesktopMenu);
 menuHamIcon.addEventListener('click', intercambiarMobileMenu);
 menuCarritoIcon.addEventListener('click', intercambiarCarritoAside);
+
 
 
 function intercambiarDesktopMenu() {
@@ -170,8 +172,10 @@ productList.push({
         cardsContainer.appendChild(productCard);
     }
 
+    let arreglo_JSON = [];
     let carritoDeCompra = [];
     let contador =0
+    let contador_carrito = document.querySelector('.contadorCarrito').innerText;
 
 function agregarCarrito(e){
 
@@ -211,8 +215,15 @@ function agregarCarrito(e){
 
     console.log(carritoDeCompra);
 
+    //local storege
+      arreglo_JSON = JSON.stringify(carritoDeCompra);
+      localStorage.setItem("carrito", arreglo_JSON);
+
     //renderizar en carrito
     mostrar_carrito();
+
+    
+
     
 }
 
@@ -222,11 +233,18 @@ function agregarCarrito(e){
 
 let contenedor_renderCarrito = document.querySelector('.my-order-content');
 
+
 function mostrar_carrito(){
-
+    console.log("carrito normal : ", carritoDeCompra);
 contenedor_renderCarrito.innerHTML = "";
+ arreglo_JSON = localStorage.getItem("carrito");
+// console.log("json string : ", arr);
+arreglo_JSON = JSON.parse(arreglo_JSON);
+console.log("json array : ", arreglo_JSON);
+carritoDeCompra = arreglo_JSON;
+console.log("carrito=jason : ", carritoDeCompra);
 
-for(let producto of carritoDeCompra){
+for(let producto of carritoDeCompra){ //of carritoDeCompra
 
 
     let div_carrito = document.createElement("div");
@@ -253,17 +271,25 @@ for(let producto of carritoDeCompra){
     div_carrito.appendChild(product_Name);
     div_carrito.appendChild(product_Price);
     div_carrito.appendChild(eliminar_producto);
-    contenedor_renderCarrito.appendChild(div_carrito);    
+    contenedor_renderCarrito.appendChild(div_carrito);  
+    
+    //
 
 }
+
+
 
 let eliminar_Item = document.querySelectorAll(".eliminarProducto");
     for(let eliminar of eliminar_Item){
         eliminar.addEventListener("click", borrar_item);
+        console.log("El item a eliminar es : ", eliminar);
        
     }
 
+
 mostrar_total();
+
+
 
 }
 
@@ -291,7 +317,7 @@ contenedor_renderCarrito.appendChild(pagarCarrito);
 
 
     let TotalAPagar = 0;
-    for(let item of carritoDeCompra){
+    for(let item of carritoDeCompra){//carritoDeCompra
         
         const str = item.precio;
         const newprecio = str.slice(1);
@@ -316,7 +342,7 @@ function borrar_item(e){
     let padre = e.target.parentNode;
 
     nombre_item = padre.querySelector('.nombreItemCarrito').innerText;
-    console.log("nombre : ", nombre_item);
+    console.log("nombre del que se elimina: ", nombre_item);
     padre.remove();
 
     actualizarCarrito();
@@ -328,11 +354,15 @@ function actualizarCarrito(){
     
     
 
-    let carritoActualizado = carritoDeCompra.filter(actualizar);
+    let carritoActualizado = carritoDeCompra.filter(actualizar);//carritoDeCompra
     console.log("nuevo arreglo actualizado", carritoActualizado);
-    carritoDeCompra="";
-    carritoDeCompra = carritoActualizado;
-    console.log("nuevo arreglo actualizado", carritoDeCompra);
+    carritoDeCompra="";// carritoDeCompra="";
+    carritoDeCompra = carritoActualizado;//carritoDeCompra = carritoActualizado;
+    arreglo_JSON = carritoActualizado;
+    console.log("el carrito de compras carritoDeCompra ", carritoDeCompra);
+    arreglo_JSON = JSON.stringify(carritoDeCompra);
+    localStorage.setItem("carrito", arreglo_JSON);
+    // console.log("nuevo arreglo actualizado", carritoDeCompra);
 
     function actualizar(objeto){
 
@@ -349,7 +379,15 @@ function actualizarCarrito(){
     }
     i =0;
     mostrar_carrito();
+
+    
 }
+
+
+
+ //localStorage.setItem("arr",carritoDeCompra);
+
+
 
 let carritoCompra = document.querySelectorAll(".addCarrito");
 

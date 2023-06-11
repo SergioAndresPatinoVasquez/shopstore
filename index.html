@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,42 +10,119 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style/sass.css">
+    <link rel="stylesheet" href="../style/sass.css">
 
     <link rel="shortcut icon" href="./iconos/logo shop.svg" type="image/x-icon">
 
-    <title>Shopstore login/registro</title>
+    <title>Shopstore</title>
 
 </head>
 
-
 <body>
 
-<!-- Registro y login para entrar a la página comprar -->
-<!-- implementar locar storage -->
+    <nav>
+        <img src="../iconos/icon_menu.svg" alt="menu" class="menu">
 
-<div class="contenedor-login">
+        <div class="nav-izquierda">
+            <img src="../logos/logo shop.svg" alt="logo" class="logo">
 
-    <div class="contenedor-input">
-        <img src="./logos/logo shop.svg" alt="" class="logo">
-        <h1 class="titulo"> Regístrate en Shopstore</h1>
-        <p class="subtitulo">¡Bienvenido/a a Shopstore, por favor regístrate y luego ingresa para realizar tus compras!</p>
-    
-        <label for="" class="label">Nombre de Usuario</label>
-        <input type="text" id="" class="input">
+            <ul>
+                <li>
+                    <a href="">Salir</a>
+                </li>
+                <li>
+                    <a href="/">Tienda</a> 
+                </li>
+            </ul>
+        </div>
 
-        <label for="" class="label">Contraseña</label>
-        <input type="text" id="" class="input">
+        <div class="nav-derecha">
+            <ul>
+                <li class="nav-usuario"> Revisa Tu Carrito</li>
+                <li class="nav-carrito">
+                    <img src="../iconos/icon_shopping_cart.svg" alt="">
+                    <div class="contadorCarrito">0</div>
+                </li>
+            </ul>
 
-        
-        <button class="registrate button">Regístrate</button>
-        <a href="./paginas/comprar.html"><button class="ingresar button">Ingresar</button></a>
-    </div>
+        </div>
 
-    
+        <!-- menu desktop -->
+        <div class="desktop-menu inactive">
 
-</div>
+            <ul>
+                <li>
+                    <a href="" class="registrarse">Login</a>
+                </li>
+                <li>
+                    <a href="" class="inicio">Tienda</a>
+                </li>
+                <li>
+                    <a href="" class="salir">Salir</a>
+                </li>
+            </ul>
+        </div>
 
-<script src="./js/script.js"></script>
+        <div class="mobile-menu inactive">
+
+            <ul>
+                <li>
+                    <a href="">Registrarse</a>
+                </li>
+                <li>
+                    <a href="">Login</a>
+                </li>
+                <li>
+                    <a href="">Tienda</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="" class="menu-usuario">Nombre de usuario</a>
+                </li>
+                <li>
+                    <a href="" class="menu-salir">Salir</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+
+
+
+
+
+
+    <section class="contenedor-principal">
+
+        <div class="contenedor-carts">
+
+
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <aside class="product-detail inactive">
+        <div class="title-container">
+            <img src="../iconos/flechita.svg" alt="arrow">
+            <p class="title">Mi Orden</p>
+        </div>
+
+        <div class="my-order-content">
+
+        </div>
+        </div>
+    </aside>
+
+<script src="../js/script.js" ></script>
 </body>
+
 </html>
